@@ -1,0 +1,514 @@
+[
+    {
+        "question_id"	:	1,
+        "question"		:	"Hello! Welcome to Liscena's first notice of loss claim filing. First off, are you an ACME Insurance Policyholder?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{1}}", "Yes"]
+                                                        },
+                                    "goto"			:	"3"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{1}}", "No"]
+                                                        },
+                                    "goto"			:	"2"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	2,
+        "question"		:	"Your claim cannot be filed.",
+        "input_type"	:	"end",
+        "next"			:	"end"
+    },
+
+    {
+        "question_id"	:	3,
+        "question"		:	"What is your policy number?",
+        "input_type"	:	"number",
+        "next"			:	"4"
+    },
+
+    {
+        "question_id"	:	4,
+        "question"		:	"Okay! Before we move on, we need to verify your identity with a few questions. First, what is your last name?",
+        "input_type"	:	"text",
+        "next"			:	"5"
+    },
+
+    {
+        "question_id"	:	5,
+        "question"		:	"What is your date of birth?",
+        "input_type"	:	"text",
+        "placeholder"	:	"MM/DD/YYYY",
+        "next"			:	[
+                                {
+                                    "condition"		: 	{
+                                                            "AND"	:	[
+                                                                            {
+                                                                                "=="	:	["{{3}}", "12345"]
+                                                                            },
+                                                                            {
+                                                                                "=="	:	["{{4}}", "Bimm"]
+                                                                            },
+                                                                            {
+                                                                                "=="	:	["{{5}}", "02/20/1996"]
+                                                                            }
+                                                                        ]
+                                                        },
+                                    "goto"			:	"7"
+                                },
+                                "6"
+                            ]
+    },
+
+    {
+        "question_id"	:	6,
+        "question"		:	"Oh no! We've failed to verify your identity! Would you like to try to verify again?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{6}}", "Yes"]
+                                                        },
+                                    "goto"			:	"4"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{6}}", "No"]
+                                                        },
+                                    "goto"			:	"1"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	7,
+        "question"		:	"Great, we're all set! What kind of claim are you looking to file?",
+        "input_type"	:	"multiple_choice",
+        "choices"		: 	["Property", "Auto"],
+        "next"			: 	[
+                                {
+                                    "condition"		: 	{
+                                                            "=="	:	["{{7}}", "Property"]
+                                                        },
+                                    "goto"			: 	"8"
+                                },
+                                {
+                                    "condition"		: 	{
+                                                            "=="	:	["{{7}}", "Auto"]
+                                                        },
+                                    "goto"			: 	"9"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	: 	8,
+        "question"		: 	"Please Call 1 (800)420-6969 to file your property insurance claim",
+        "input_type" 	: 	"end",
+        "next"			: 	"end"
+    },
+
+    {
+        "question_id"	: 	9,
+        "question"		: 	"Thanks for trusting us to deal with your auto insurance claim. Were there any injuries related to your claim?",
+        "input_type" 	: 	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			: 	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{9}}", "Yes"]
+                                                        },
+                                    "goto"			:	"10"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{9}}", "No"]
+                                                        },
+                                    "goto"			:	"11"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	10,
+        "question"		:	"Unfortunately we cannot fully support your claim... Please Call 1 (800)420-6969 to file your auto claim",
+        "input_type"	:	"end",
+        "next"			:	"end"
+    },
+
+    {
+        "question_id"	: 	11,
+        "question"		: 	"Were there more than 2 vehicles involved in the accident?",
+        "input_type" 	: 	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			: 	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{11}}", "Yes"]
+                                                        },
+                                    "goto"			:	"10"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{11}}", "No"]
+                                                        },
+                                    "goto"			:	"12"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	12,
+        "question"		:	"Which insured vehicle was damaged?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Honda Civic 2012 - AMCH 313", "Lexus RX 350L 2018 - BACH 326", "Other non-insured vehicle"],
+        "next"			:	[
+                                {
+                                    "condition"		: 	{
+                                                            "OR"	:	[
+                                                                            {
+                                                                                "=="	:	["{{12}}", "Honda Civic 2012 - AMCH 313"]
+                                                                            },
+                                                                            {
+                                                                                "=="	:	["{{12}}", "Lexus RX 350L 2018 - BACH 326"]
+                                                                            }
+                                                                        ]
+                                                        },
+                                    "goto"			:	"13"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{12}}", "Other non-insured vehicle"]
+                                                        },
+                                    "goto"			:	"10"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	: 	13,
+        "question"		: 	"Are you still at the scene?",
+        "input_type" 	: 	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			: 	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{13}}", "Yes"]
+                                                        },
+                                    "goto"			:	"14"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{13}}", "No"]
+                                                        },
+                                    "goto"			:	"16"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	: 	14,
+        "question"		: 	"Do you need a tow?",
+        "input_type" 	: 	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			: 	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{14}}", "Yes"]
+                                                        },
+                                    "goto"			:	"15"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{14}}", "No"]
+                                                        },
+                                    "goto"			:	"17"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	15,
+        "question"		:	"Let us redirect you to the towing page! <a href='https://liscena.com/'>Click here to be redirected </a>",
+        "input_type"	:	"end",
+        "next"			:	"end"
+    },
+
+    {
+        "question_id"	: 	16,
+        "question"		: 	"Are you still in posession of your vehicle?",
+        "input_type" 	: 	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			: 	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{16}}", "Yes"]
+                                                        },
+                                    "goto"			:	"17"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{16}}", "No"]
+                                                        },
+                                    "goto"			:	"17"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	: 	17,
+        "question"		: 	"Who was driving at the time of incident?",
+        "input_type" 	: 	"multiple_choice",
+        "choices"		:	["Myself", "Other Dependent"],
+        "next"			: 	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{17}}", "Myself"]
+                                                        },
+                                    "goto"			:	"20"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{17}}", "Other Dependent"]
+                                                        },
+                                    "goto"			:	"18"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	18,
+        "question"		:	"Okay! What is the dependent's name?",
+        "input_type"	:	"text",
+        "next"			:	"19"
+    },
+
+    {
+        "question_id"	:	19,
+        "question"		:	"Okay! What is the dependents phone number?",
+        "input_type"	:	"number",
+        "placeholder"	:	"123-456-7890",
+        "next"			:	"20"
+    },
+
+    {
+        "question_id"	:	20,
+        "question"		:	"Great, what is the date of the incident?",
+        "input_type"	:	"text",
+        "placeholder"	:	"MM/DD/YYYY",
+        "next"			:	"21"
+    },
+
+    {
+        "question_id"	:	21,
+        "question"		:	"Approximately what time did the incident occur?",
+        "input_type"	:	"text",
+        "placeholder"	:	"HH:MM AM/PM",
+        "next"			:	"22"
+    },
+
+    {
+        "question_id"	:	22,
+        "question"		:	"How many other parties were involved?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["None", "1 or 2"],
+        "next"			:	[
+                                {
+                                    "condition"		: 	{
+                                                            "=="	:	["{{22}}", "None"]
+                                                        },
+                                    "goto"			:	"29"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{22}}", "1 or 2"]
+                                                        },
+                                    "goto"			:	"23"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	23,
+        "question"		:	"We need more information about each party",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["OK"],
+        "next"			:	"24"
+    },
+
+    {
+        "question_id"	:	24,
+        "question"		:	"Okay! What is the other party's name?",
+        "input_type"	:	"text",
+        "next"			:	"25"
+    },
+
+    {
+        "question_id"	:	25,
+        "question"		:	"Okay! What is the other party's Insurer?",
+        "input_type"	:	"text",
+        "next"			:	"26"
+    },
+
+    {
+        "question_id"	:	26,
+        "question"		:	"Great, what is their policy number?",
+        "input_type"	:	"number",
+        "next"			:	"27"
+    },
+
+    {
+        "question_id"	:	27,
+        "question"		:	"Please provide us with the other party's contact information,",
+        "input_type"	:	"text",
+        "next"			:	"28"
+    },
+
+    {
+        "question_id"	:	28,
+        "question"		:	"Are there any more involved parties you would like to report",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	[
+                                {
+                                    "condition"		: 	{
+                                                            "=="	:	["{{28}}", "Yes"]
+                                                        },
+                                    "goto"			:	"23"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{28}}", "No"]
+                                                        },
+                                    "goto"			:	"29"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	29,
+        "question"		:	"Please select the option that best describes your incident",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Rear Ended", "T-Bone", "Side Swipe", "Head On", "Vehicle Rollover", "Intersection Collision", "Single Car Crash", "Off Road Accident"],
+        "next"			:	"30"
+    },
+
+    {
+        "question_id"	:	30,
+        "question"		:	"Is your vehicle driveable?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	"31"
+    },
+
+    {
+        "question_id"	:	31,
+        "question"		:	"Are you able to turn on your vehicle?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	"32"
+    },
+
+    {
+        "question_id"	:	32,
+        "question"		:	"Have your airbags been deployed?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	"33"
+    },
+
+    {
+        "question_id"	:	33,
+        "question"		:	"Are any fluids leaking?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	"34"
+    },
+
+    {
+        "question_id"	:	34,
+        "question"		:	"Is there any fire damage?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	"35"
+    },
+
+    {
+        "question_id"	:	35,
+        "question"		:	"Will you require a rental vehicle?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	[
+                                {
+                                    "condition"		: 	{
+                                                            "=="	:	["{{35}}", "Yes"]
+                                                        },
+                                    "goto"			:	"36"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{35}}", "No"]
+                                                        },
+                                    "goto"			:	"37"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	36,
+        "question"		:	"Please go to our rental page at: <a href='https://liscena.com'> this link! </a>",
+        "input_type"	:	"end",
+        "next"			:	"end"
+    },
+
+    {
+        "question_id"	:	37,
+        "question"		:	"Can you upload a copy of the police report?",
+        "input_type"	:	"multiple_choice",
+        "choices"		:	["Yes", "No"],
+        "next"			:	[
+                                {
+                                    "condition"		: 	{
+                                                            "=="	:	["{{37}}", "Yes"]
+                                                        },
+                                    "goto"			:	"38"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	:	["{{37}}", "No"]
+                                                        },
+                                    "goto"			:	"39"
+                                }
+                            ]
+    },
+
+    {
+        "question_id"	:	38,
+        "question"		:	"Please upload your police report!",
+        "input_type"	:	"file_upload_single",
+        "next"			:	"39"
+    },
+
+    {
+        "question_id"	:	39,
+        "question"		:	"That's all the information we need for now. Please enter your mobile phone number that you would like to be contacted at moving forward!",
+        "input_type"	:	"number",
+        "placeholder"	: 	"123-456-7890",
+        "next"			:	"40"
+    },
+
+    {
+        "question_id"	:	40,
+        "question"		:	"Your adjuster will be assigned by the end of the day, and you will be contacted at the phonenumber you provided. You can also check in on claims, ask questions of your adjuster, or upload additional information. Thanks for filing your claim with Liscena.",
+        "input_type"	:	"end",
+        "next"			:	"end"
+    }
+]

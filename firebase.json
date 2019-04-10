@@ -1,0 +1,29 @@
+{
+  "hosting": [{
+      "target": "liscena-ca",
+      "public": "dist/app_ca",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [{
+        "source": "**",
+        "destination": "index.html"
+      }]
+    },
+    {
+      "target": "liscena-ph",
+      "public": "dist/app_ph",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [{
+        "source": "**",
+        "destination": "index.html"
+      }]
+    }
+  ]
+}
