@@ -1,21 +1,24 @@
 <template>
-  <div class="chat-form">
-    <div v-if="loading" class="chat-form__loading">
-      <lis-loader color="#434B65"/>
-    </div>
-    <template v-else>
-      <lis-chat-wrapper :messages="messages"/>
-      <chat-input
-        v-if="!uploading"
-        @sendMessage="sendUserMessage"
-        @sendFiles="sendUserFile"
-        :reqType="currentType"
-        :placeholder="placeholder"
-        :choices="choices"/>
-      <div v-if="uploading" class="chat-form__uploading">
+  <div class="chat-form-wrapper">
+    <h1>Arkady Arkhangorodsky's Engineering Design Portfolio</h1>
+    <div class="chat-form">
+      <div v-if="loading" class="chat-form__loading">
         <lis-loader color="#434B65"/>
       </div>
-    </template>
+      <template v-else>
+        <lis-chat-wrapper :messages="messages"/>
+        <chat-input
+          v-if="!uploading"
+          @sendMessage="sendUserMessage"
+          @sendFiles="sendUserFile"
+          :reqType="currentType"
+          :placeholder="placeholder"
+          :choices="choices"/>
+        <div v-if="uploading" class="chat-form__uploading">
+          <lis-loader color="#434B65"/>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -73,14 +76,22 @@ export default class ChatFnol extends Vue {
   private getNextQuestion(message: any) {
       let next: any;
       next = questions[this.currentID - 1].next;
-      if (next === 'end') return null;
-      if (!isNaN(next)) return parseInt(next);
+      if (next === 'end') {
+          return null;
+      }
+      if (!isNaN(next)) {
+          return parseInt(next, 10);
+      }
       for (const condition of next) {
           if ('==' in condition.condition) {
-              if (this.evaluateEquals(condition)) return condition.goto;
+              if (this.evaluateEquals(condition)) {
+                  return condition.goto;
+              }
           } else if ('OR' in condition.condition) {
               for (const innerCondition of condition.condition.OR) {
-                  if (this.evaluateEquals(innerCondition)) return condition.goto;
+                  if (this.evaluateEquals(innerCondition)) {
+                      return condition.goto;
+                  }
               }
           }
       }
@@ -123,6 +134,17 @@ export default class ChatFnol extends Vue {
 
 <style lang="scss" scoped>
 @import "@/assets/styles/lis-resources.scss";
+
+.chat-form-wrapper {
+  height: calc(100% - 60px);
+  width: 100%;
+
+  h1 {
+      margin-top: 18px;
+      font-size: 24px;
+  }
+}
+
 
 .chat-form {
   height: calc(100% - 60px);

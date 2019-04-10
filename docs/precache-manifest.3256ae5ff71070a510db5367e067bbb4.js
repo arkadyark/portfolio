@@ -1,18 +1,18 @@
 self.__precacheManifest = [
   {
-    "revision": "d95ceace71669a4ef7fb",
-    "url": "/portfolio/css/app.539f1d6a.css"
+    "revision": "89614729514b539f66c8",
+    "url": "/portfolio/css/app.65311ddd.css"
   },
   {
-    "revision": "d95ceace71669a4ef7fb",
-    "url": "/portfolio/js/app.25dfe938.js"
+    "revision": "89614729514b539f66c8",
+    "url": "/portfolio/js/app.d3167277.js"
   },
   {
     "revision": "e75c41a7a4b6db02353c",
     "url": "/portfolio/js/chunk-vendors.92830302.js"
   },
   {
-    "revision": "9ab1521cf623fe7a5252f87f5cffbc8d",
+    "revision": "5cf370b993d273d8c8aede922a5e4efd",
     "url": "/portfolio/index.html"
   },
   {
@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "/portfolio/img/crawford_logo.png"
   },
   {
-    "revision": "8283d5d5a5c214be89b6ed37ccae0450",
-    "url": "/portfolio/img/liscena_logo_white.png"
-  },
-  {
     "revision": "27bd83660ac336d1538516caec81584c",
     "url": "/portfolio/img/liscena_logo.png"
+  },
+  {
+    "revision": "8283d5d5a5c214be89b6ed37ccae0450",
+    "url": "/portfolio/img/liscena_logo_white.png"
   },
   {
     "revision": "e8a8eaf6e2653547cc555c11920adc4a",

@@ -64,9 +64,9 @@ export default class LisChatWrapper extends Vue {
   public getIcon(message: any) {
     switch (message.author) {
       case 'bot':
-        return '/img/assistant_icon.png';
+        return 'img/assistant_icon.png';
       case 'agent':
-        return '/img/agent_icon.png';
+        return 'img/agent_icon.png';
       default:
         return null;
     }

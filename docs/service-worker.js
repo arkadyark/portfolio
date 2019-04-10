@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/portfolio/precache-manifest.ef54c1504ed4b815226dcb2738af6bfb.js"
+  "/portfolio/precache-manifest.3256ae5ff71070a510db5367e067bbb4.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "liscena"});
