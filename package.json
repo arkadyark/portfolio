@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --port 8081 src/app_ph/index.ts",
-    "build": "vue-cli-service build --dest dist/app_ph src/app_ph/index.ts",
+    "build": "vue-cli-service build --dest docs/portfolio src/app_ph/index.ts",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "deploy": "node ./node_modules/vue-gh-pages/index.js"
@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.123",
     "@types/socket.io-client": "^1.4.32",
+    "@vue/cli": "^3.5.5",
     "axios": "^0.18.0",
     "axios-auth-refresh": "^1.0.6",
     "date-fns": "^1.30.1",
