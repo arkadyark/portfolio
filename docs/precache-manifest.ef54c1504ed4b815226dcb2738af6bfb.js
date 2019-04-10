@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "f626b557d09f0e4fcadee7322246c68a",
-    "url": "/portfolio/img/assistant_icon.png"
-  },
-  {
     "revision": "d65fcc3b9d61fe13e899be3b85b63bdf",
     "url": "/portfolio/img/agent_icon.png"
+  },
+  {
+    "revision": "f626b557d09f0e4fcadee7322246c68a",
+    "url": "/portfolio/img/assistant_icon.png"
   },
   {
     "revision": "a3852cd93839ce278e402fda042857e7",
