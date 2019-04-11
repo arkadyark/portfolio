@@ -1,5 +1,5 @@
 <template>
-  <div class="lis-chat-wrapper" ref="chat-wrapper" @scroll="userScroll">
+  <div class="lis-chat-wrapper" ref="chat-wrapper">
     <transition name="fade" appear>
       <slot name="before-chat"/>
     </transition>
@@ -39,14 +39,6 @@ export default class LisChatWrapper extends Vue {
   public scrollIntervalId: number | null = null;
   @Prop({ type: Array, default: () => [] }) private messages!: any[];
 
-  public mounted() {
-    // Arbitrary timeout to wait for
-    // messages to render and fill the div
-    this.scrollIntervalId = setInterval(() => {
-      this.scrollMessagesToBottom();
-    }, 10);
-  }
-
   public beforeDestroy() {
     clearInterval(this.scrollIntervalId as number);
     this.scrollIntervalId = null;
@@ -75,22 +67,12 @@ export default class LisChatWrapper extends Vue {
   public getColor(message: any) {
     switch (message.author) {
       case 'bot':
-        return '#0057FF';
+        return '#a087FF';
       case 'agent':
         return '#9CAEC4';
       default:
         return '#434B65';
     }
-  }
-
-  public userScroll(e: any) {
-    /* Only allow user to scroll when element
-    is not being scrolled by automatic scroll */
-    if (!this.isUserScroll) { return; }
-
-    const el = this.$refs['chat-wrapper'] as HTMLElement;
-    const isScrolledToBottom =
-      el.scrollTop === el.scrollHeight - el.offsetHeight;
   }
 
   public scrollMessagesToBottom() {

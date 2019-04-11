@@ -6,7 +6,7 @@
         <lis-loader color="#434B65"/>
       </div>
       <template v-else>
-        <lis-chat-wrapper :messages="messages"/>
+        <lis-chat-wrapper ref="chat-wrapper" :messages="messages"/>
         <chat-input
           v-if="!uploading"
           @sendMessage="sendUserMessage"
@@ -46,7 +46,7 @@ export default class ChatFnol extends Vue {
   private currentType: any = {input_type: 'text'};
   private placeholder: any = null;
   private choices: any = [];
-  private answers: any = [];
+  private answers: any = {};
 
   public created() {
       let firstQuestion: any;
@@ -59,7 +59,6 @@ export default class ChatFnol extends Vue {
       });
       this.currentID = firstQuestion.question_id;
       this.currentType.input_type = firstQuestion.input_type;
-      this.placeholder = firstQuestion.placeholder;
       this.choices = firstQuestion.choices || [];
       this.loading = false;
   }
@@ -67,9 +66,9 @@ export default class ChatFnol extends Vue {
   private evaluateEquals(condition: any) {
       const vals = condition.condition['=='];
       const matches0 = vals[0].match(/\{\{(.*?)\}\}/);
-      const val0 = matches0 === null ? vals[0] : this.answers[matches0[1] - 1];
+      const val0 = matches0 === null ? vals[0] : this.answers[matches0[1]];
       const matches1 = vals[1].match(/\{\{(.*?)\}\}/);
-      const val1 = matches1 === null ? vals[1] : this.answers[matches1[1] - 1];
+      const val1 = matches1 === null ? vals[1] : this.answers[matches1[1]];
       return val0 === val1;
   }
 
@@ -95,7 +94,11 @@ export default class ChatFnol extends Vue {
               }
           }
       }
-      return 1;
+  }
+
+  private sendUserFile(files: any) {
+      console.log('Sending a file');
+      this.sendUserMessage('File uploaded.');
   }
 
   private sendUserMessage(message: any) {
@@ -105,7 +108,7 @@ export default class ChatFnol extends Vue {
       type: this.currentType.input_type,
       message,
     });
-    this.answers.push(message);
+    this.answers[this.currentID] = message;
 
     const nextQuestionID = this.getNextQuestion(message);
     if (nextQuestionID === null) {
@@ -121,13 +124,13 @@ export default class ChatFnol extends Vue {
     });
     this.currentID = nextQuestion.question_id;
     this.currentType.input_type = nextQuestion.input_type;
-    this.placeholder = nextQuestion.placeholder;
     this.choices = nextQuestion.choices || [];
-  }
 
-  private sendUserFile(files: any) {
-      console.log('Sending a file');
-      this.sendUserMessage('File uploaded.');
+    setTimeout(() => {
+        const el = this.$refs['chat-wrapper'] as any;
+        const el2 = el.$refs['chat-wrapper'] as HTMLElement;
+        el2.scrollTop = el2.scrollHeight;
+    }, 0);
   }
 }
 </script>

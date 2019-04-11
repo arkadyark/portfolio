@@ -5,10 +5,10 @@
 	--color-white-1: #fff;
 	--color-light-1: rgba(114, 129, 142, 0.15);
 	--color-light-2: rgba(114, 129, 142, 0.35);
-	--color-blue-1: #081e32;
-	--color-blue-1-hover: #01090f;
-	--color-blue-2: #434B65;
-	--color-blue-3: #0057FF;
+	--color-blue-1: #041b92;
+	--color-blue-1-hover: #11b94f;
+	--color-blue-2: #838B85;
+	--color-blue-3: #a087FF;
 	--color-blue-3-hover: #0044cc;
 	--color-blue-3-shadow: rgba(58, 124, 255, 0.3);
 	--color-blue-4: #9CAEC4;
@@ -230,3 +230,10 @@ b {
 		padding: 0 20px;
 	}
 }
+
+.message-image {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+

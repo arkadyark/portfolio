@@ -52,7 +52,7 @@ export default class LisChatMessage extends Vue {
   @Prop({ type: Object, default: '' }) private message!: any;
   @Prop({ type: String, default: 'left' }) private align!: string;
   @Prop({ type: String }) private icon!: string;
-  @Prop({ type: String, default: '#0057FF' }) private color!: string;
+  @Prop({ type: String, default: '#aa87FF' }) private color!: string;
   @Prop({ type: String }) private datetime!: string;
 
   get imageUrl() {
@@ -167,7 +167,7 @@ export default class LisChatMessage extends Vue {
     }
     #{$root}__wrapper__bubble {
       border-top-left-radius: 0;
-      border-top-right-radius: 25px;
+      border-top-right-radius: 35px;
       border-bottom-left-radius: 25px;
       border-bottom-right-radius: 25px;
       text-align: left;

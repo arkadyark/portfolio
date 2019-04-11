@@ -1,18 +1,18 @@
 self.__precacheManifest = [
   {
-    "revision": "89614729514b539f66c8",
-    "url": "/portfolio/css/app.65311ddd.css"
+    "revision": "97ec57d6dc3d5a6b1f99",
+    "url": "/portfolio/css/app.45f26b59.css"
   },
   {
-    "revision": "89614729514b539f66c8",
-    "url": "/portfolio/js/app.d3167277.js"
+    "revision": "97ec57d6dc3d5a6b1f99",
+    "url": "/portfolio/js/app.62cd0f5d.js"
   },
   {
     "revision": "e75c41a7a4b6db02353c",
     "url": "/portfolio/js/chunk-vendors.92830302.js"
   },
   {
-    "revision": "5cf370b993d273d8c8aede922a5e4efd",
+    "revision": "ae4ef5da689cff068ad1b737fa9b4610",
     "url": "/portfolio/index.html"
   },
   {
@@ -20,16 +20,16 @@ self.__precacheManifest = [
     "url": "/portfolio/img/agent_icon.png"
   },
   {
-    "revision": "f626b557d09f0e4fcadee7322246c68a",
+    "revision": "c9e1ec0413da9443628a910ea7f31fd2",
     "url": "/portfolio/img/assistant_icon.png"
-  },
-  {
-    "revision": "a3852cd93839ce278e402fda042857e7",
-    "url": "/portfolio/img/user_icon.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/portfolio/robots.txt"
+  },
+  {
+    "revision": "a3852cd93839ce278e402fda042857e7",
+    "url": "/portfolio/img/user_icon.png"
   },
   {
     "revision": "b4172d973f300373ec1c7594c09be64d",
@@ -40,31 +40,27 @@ self.__precacheManifest = [
     "url": "/portfolio/img/crawford_logo.png"
   },
   {
-    "revision": "27bd83660ac336d1538516caec81584c",
-    "url": "/portfolio/img/liscena_logo.png"
-  },
-  {
     "revision": "8283d5d5a5c214be89b6ed37ccae0450",
     "url": "/portfolio/img/liscena_logo_white.png"
+  },
+  {
+    "revision": "27bd83660ac336d1538516caec81584c",
+    "url": "/portfolio/img/liscena_logo.png"
   },
   {
     "revision": "e8a8eaf6e2653547cc555c11920adc4a",
     "url": "/portfolio/img/req_types/driver_license.png"
   },
   {
-    "revision": "caa9858667fbf85227df05d3085617ee",
-    "url": "/portfolio/img/car_1.JPG"
+    "revision": "c049c4fb1c9c27e8005f6d31428dc86b",
+    "url": "/portfolio/img/autoronto_team.jpg"
   },
   {
     "revision": "8f45996b80259d8f72905d8f84a012b9",
     "url": "/portfolio/img/car_2.JPG"
   },
   {
-    "revision": "5054e157d2a1a326ce706c6c8a86f0a9",
-    "url": "/portfolio/img/insurance_47984.pdf"
-  },
-  {
-    "revision": "e03f898eeee10fa09ed15c28d2a53e2f",
-    "url": "/portfolio/img/ocr_test.jpg"
+    "revision": "caa9858667fbf85227df05d3085617ee",
+    "url": "/portfolio/img/car_1.JPG"
   }
 ];

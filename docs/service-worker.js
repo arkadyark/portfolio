@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/portfolio/precache-manifest.3256ae5ff71070a510db5367e067bbb4.js"
+  "/portfolio/precache-manifest.a0478776a93888c6c79cf83063807ce7.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "liscena"});
+workbox.core.setCacheNameDetails({prefix: "Portfolio"});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
