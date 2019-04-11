@@ -1,18 +1,18 @@
 self.__precacheManifest = [
   {
-    "revision": "97ec57d6dc3d5a6b1f99",
+    "revision": "4ffd642fe735374f83cf",
     "url": "/portfolio/css/app.45f26b59.css"
   },
   {
-    "revision": "97ec57d6dc3d5a6b1f99",
-    "url": "/portfolio/js/app.62cd0f5d.js"
+    "revision": "4ffd642fe735374f83cf",
+    "url": "/portfolio/js/app.2a6ec873.js"
   },
   {
     "revision": "e75c41a7a4b6db02353c",
     "url": "/portfolio/js/chunk-vendors.92830302.js"
   },
   {
-    "revision": "ae4ef5da689cff068ad1b737fa9b4610",
+    "revision": "b71346dac249e18711a2d0dc4df92d1f",
     "url": "/portfolio/index.html"
   },
   {
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/portfolio/img/assistant_icon.png"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
-    "url": "/portfolio/robots.txt"
-  },
-  {
     "revision": "a3852cd93839ce278e402fda042857e7",
     "url": "/portfolio/img/user_icon.png"
+  },
+  {
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "url": "/portfolio/robots.txt"
   },
   {
     "revision": "b4172d973f300373ec1c7594c09be64d",
@@ -56,11 +56,19 @@ self.__precacheManifest = [
     "url": "/portfolio/img/autoronto_team.jpg"
   },
   {
-    "revision": "8f45996b80259d8f72905d8f84a012b9",
-    "url": "/portfolio/img/car_2.JPG"
+    "revision": "a002d076238252aac39cf16d2ac17b2f",
+    "url": "/portfolio/img/aer201_robot.jpg"
   },
   {
     "revision": "caa9858667fbf85227df05d3085617ee",
     "url": "/portfolio/img/car_1.JPG"
+  },
+  {
+    "revision": "8f45996b80259d8f72905d8f84a012b9",
+    "url": "/portfolio/img/car_2.JPG"
+  },
+  {
+    "revision": "78cef6ec8f9d069dcc2d4ca3bba696fc",
+    "url": "/portfolio/img/capstone_team.jpg"
   }
 ];

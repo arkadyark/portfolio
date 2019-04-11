@@ -22,7 +22,7 @@
 
     {
         "question_id"	:	2,
-        "question"		:	"I'm a soon-to-be graduate from UofT's Engineering Science program with a major in robotics. When I started at UofT, I knew I enjoyed math and programming, but I didn't have too clear a sense beyond that. Do you want to hear about my work?",
+        "question"		:	"I'm a soon-to-be graduate from UofT's Engineering Science program with a major in robotics. When I started at UofT, I knew I enjoyed math and programming, but I didn't have too clear a sense beyond that. Over the course of the last 5 years of school, work, and life, I've grown a lot as an engineer, both in my individual technical abilities, but also in my ability to function within an organization. Do you want to hear about my work?",
         "input_type"	:	"multiple_choice",
         "choices"		:	["Okay", "No thanks"],
         "next"			:	[
@@ -43,7 +43,7 @@
 
     {
         "question_id"	:	3,
-        "question"		:	"Sure! I've worked on a bunch of things in a bunch of contexts, and I've tried to keep applying the engineering design approaches to all of it. Do you want to hear about my professional experience, school work, extra-curriculars, or other random side stuff?",
+        "question"		:	"Sure! I've worked on a bunch of things in a bunch of contexts, and I've tried to keep applying the engineering design approaches, to all of it, being explicit about what I hope to gain from the experience and reflecting on what I've learned from it. Do you want to hear about my professional experience, school work, extra-curriculars, or other random side stuff?",
         "input_type"	:	"multiple_choice",
         "choices"       :   ["Professional experience", "School work", "Extra-curriculars", "Random stuff"],
         "next"			:	[
@@ -145,7 +145,7 @@
 
     {
         "question_id"	:   7,
-        "question"		:	"A lot of my other work outside of school is coding, you can see more of that at my Github <a target='_blank' href='https://www.github.com/arkadyark'>here</a>. I also produce a podcast where a friend and I interview students about their PEYs, you can see that <a target='_blank' href='https://thatthingididforayear.simplecast.fm'>here</a>. Do you want to hear more about my other work?",
+        "question"		:	"A lot of my other work outside of school is coding, including this portfolio, a measure of the closeness of US elections, and an AI ski racing simulator. You can see more of that at my Github <a target='_blank' href='https://www.github.com/arkadyark'>here</a>. I also produce a podcast where a friend and I interview students about their PEYs, you can see that <a target='_blank' href='https://thatthingididforayear.simplecast.fm'>here</a>. Do you want to hear more about my other work?",
         "input_type"	:	"multiple_choice",
         "choices"       :   ["Sure!", "No thanks"],
         "next"			:	[
@@ -166,44 +166,230 @@
 
     {
         "question_id"	:   8,
-        "question"		:	"Okay, hope you enjoyed learning about my engineering design experience. See you later!",
-        "input_type"	:	"end",
-        "next"			:	"end"
+        "question"		:	"At Google I worked for two summers as a software engineering intern, most of all getting to learn a lot about how an organization can stay committed follow best practices at scale. I worked on the GSuite team on adding time estimates to a data export feature in a somewhat lesser known project, then I worked on the Speech team on adding a new data set to the language model training pipeline. This work gave me a lot of confidence in my technical abilities that has been very helpful going forward in other projects today. What else do you want to hear about?",
+        "choices"       :  ["More professional experiences", "School work", "Extra-curriculars", "Random projects", "I'm done"],
+        "input_type"	:	"multiple_choice",
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{8}}", "More professional experiences"]
+                                                        },
+                                    "goto"			:	"4"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{8}}", "School work"]
+                                                        },
+                                    "goto"			:	"5"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{8}}", "Extra-curriculars"]
+                                                        },
+                                    "goto"			:	"6"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{8}}", "Random projects"]
+                                                        },
+                                    "goto"			:	"7"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{8}}", "I'm done"]
+                                                        },
+                                    "goto"			:	"14"
+                                }
+                            ]
     },
 
     {
         "question_id"	:   9,
-        "question"		:	"Okay, hope you enjoyed learning about my engineering design experience. See you later!",
-        "input_type"	:	"end",
-        "next"			:	"end"
+        "question"		:	"I spent 8 months as an intern at <a href='https://www.rapyuta-robotics.com/'>Rapyuta Robotics</a>, a startup working on building a cloud robotics platform. It was my first time working in a startup environment, where I found I was able to make individual contributions at a bigger scale. Specifically, one project I worked on involved building a system for stitching photographs taken by drones together to make a map of the world, and deploying that service to the cloud. The more important takeaways from this internship, aside from technical skills, were helping me realize that I needed to start prioritizing my ability to work in a team more and build confidence in my communications and understanding of teams, in addition to just the technical skills. What else do you want to hear about?",
+        "choices"       :  ["More professional experiences", "School work", "Extra-curriculars", "Random projects", "I'm done"],
+        "input_type"	:	"multiple_choice",
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{9}}", "More professional experiences"]
+                                                        },
+                                    "goto"			:	"4"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{9}}", "School work"]
+                                                        },
+                                    "goto"			:	"5"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{9}}", "Extra-curriculars"]
+                                                        },
+                                    "goto"			:	"6"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{9}}", "Random projects"]
+                                                        },
+                                    "goto"			:	"7"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{9}}", "I'm done"]
+                                                        },
+                                    "goto"			:	"14"
+                                }
+                            ]
     },
 
     {
         "question_id"	:   10,
-        "question"		:	"Okay, hope you enjoyed learning about my engineering design experience. See you later!",
-        "input_type"	:	"end",
-        "next"			:	"end"
+        "question"		:	"The last internship of my undergraduate was spent in Ottawa working at Shopify as a data engineering intern. This internship was about following up my time at Rapyuta with my increased focus on understanding how teams work within an organization. This was especially necessary in this team, as we were responsible for managing the data storage for data coming from many different teams, so it required understanding where we fit in among the work of many other people. What else do you want to hear about?",
+        "choices"       :  ["More professional experiences", "School work", "Extra-curriculars", "Random projects", "I'm done"],
+        "input_type"	:	"multiple_choice",
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{10}}", "More professional experiences"]
+                                                        },
+                                    "goto"			:	"4"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{10}}", "School work"]
+                                                        },
+                                    "goto"			:	"5"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{10}}", "Extra-curriculars"]
+                                                        },
+                                    "goto"			:	"6"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{10}}", "Random projects"]
+                                                        },
+                                    "goto"			:	"7"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{10}}", "I'm done"]
+                                                        },
+                                    "goto"			:	"14"
+                                }
+                            ]
     },
 
     {
         "question_id"	:   11,
-        "question"		:	"Okay, hope you enjoyed learning about my engineering design experience. See you later!",
-        "input_type"	:	"end",
-        "next"			:	"end"
+        "question"		:	"AER201 was a course I took in second year in which I had to build and program a robot with a team of three classmates. <img class='message-image' src='img/aer201_robot.jpg'/>This was one of the first projects I got to work on over a longer timeframe that involved rigorous planning and documentation of the engineering process we followed, from making prototypes to iterating on them to reach our final product (pictured). What else do you want to hear about?",
+        "choices"       :  ["More school work", "Professional experience", "Extra-curriculars", "Random projects", "I'm done"],
+        "input_type"	:	"multiple_choice",
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{11}}", "More school work"]
+                                                        },
+                                    "goto"			:	"5"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{11}}", "Professional experience"]
+                                                        },
+                                    "goto"			:	"4"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{11}}", "Extra-curriculars"]
+                                                        },
+                                    "goto"			:	"6"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{11}}", "Random projects"]
+                                                        },
+                                    "goto"			:	"7"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{11}}", "I'm done"]
+                                                        },
+                                    "goto"			:	"14"
+                                }
+                            ]
     },
 
     {
         "question_id"	:   12,
-        "question"		:	"Okay, hope you enjoyed learning about my engineering design experience. See you later!",
-        "input_type"	:	"end",
-        "next"			:	"end"
+        "question"		:	"APS490 was a full-year capstone course I'm just finishing now. <img class='message-image' src='img/capstone_team.jpg'/>My team (pictured) worked on an improved experience for automotive insurance claim filing, by improving the communication channel between policyholders and adjusters. Looking at what my teammates said about me in our TELS surveys, I feel like I can say that I've come a long way from where I started in terms of confidence in expressing my technical opinions. This is something I focused on in my internships, so it's rewarding to hear them reinforce my progress. In this class, I developed a 'dynamic form' interface that was a simplified chatbot, which also serves as the core of this design portfolio. This project was all about reconsidering all of our assumptions, and taught me the importance of focusing closely on what actually drives value to clients, beyond just interesting and exciting technology. What else do you want to hear about?",
+        "choices"       :  ["More school work", "Professional experience", "Extra-curriculars", "Random projects", "I'm done"],
+        "input_type"	:	"multiple_choice",
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{12}}", "More school work"]
+                                                        },
+                                    "goto"			:	"5"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{12}}", "Professional experience"]
+                                                        },
+                                    "goto"			:	"4"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{12}}", "Extra-curriculars"]
+                                                        },
+                                    "goto"			:	"6"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{12}}", "Random projects"]
+                                                        },
+                                    "goto"			:	"7"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{12}}", "I'm done"]
+                                                        },
+                                    "goto"			:	"14"
+                                }
+                            ]
     },
 
     {
         "question_id"	:   13,
-        "question"		:	"Okay, hope you enjoyed learning about my engineering design experience. See you later!",
-        "input_type"	:	"end",
-        "next"			:	"end"
+        "question"		:	"This role as a team lead for Traffic Light and Sign detection for aUToronto has been one of the most intense extra-curricular experiences I've had, both because of the technical challenges, but also because I had to quickly pick up the skills to lead a team of 8 other students and present our work.<img class='message-image' src='img/autoronto_team.jpg'/>I've specifically had to learn how to delegate work and understand the long-term value of investing in my team members becoming more productive. While early on I may be able to do the work I give them faster, over time if I could get 8 people contributing to their fullest that could accomplish much more than I could myself. That said, I also did make significant technical contributions on implementing many different parts of our system and integrating it with other teams. Is there anything else you want to hear about?",
+        "choices"       :  ["School work", "Professional experience", "Random projects", "I'm done"],
+        "input_type"	:	"multiple_choice",
+        "next"			:	[
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{13}}", "School work"]
+                                                        },
+                                    "goto"			:	"5"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{13}}", "Professional experience"]
+                                                        },
+                                    "goto"			:	"4"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{13}}", "Random projects"]
+                                                        },
+                                    "goto"			:	"7"
+                                },
+                                {
+                                    "condition"		:	{
+                                                            "=="	: ["{{13}}", "I'm done"]
+                                                        },
+                                    "goto"			:	"14"
+                                }
+                            ]
     },
 
     {
